@@ -1,12 +1,9 @@
-package Kata_1;
+package Kata;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 class SumMiddleTest {
     @Test
     @DisplayName("Sum all numbers except highest and lowest number.")
@@ -19,16 +16,25 @@ class SumMiddleTest {
         //Assert
         assertEquals(expect, intResult.sumExcludeMinMax(numbers));
     }
-
     @Test
-    @DisplayName("Test with imput 'null'")
+    @DisplayName("Test with input 'null'")
     public void testNullInput(){
+        //Arrange
         int expect = 0;
         //Act
         SumMiddle intResult = new SumMiddle();
         //Assert
         assertEquals(expect, intResult.sumExcludeMinMax(null));
     }
-
-
+    @Test
+    @DisplayName("Test with array with elements of 3 or less")
+    public void testSmallArray(){
+        //Arrange
+        int expect = 0;
+        int[] numbers = {1, 2};
+        //Act
+        SumMiddle intResult = new SumMiddle();
+        //Assert
+        assertEquals(expect, intResult.sumExcludeMinMax(numbers));
+    }
 }
